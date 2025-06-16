@@ -15,9 +15,7 @@ const skills: SkillItem[] = [
   { name: "CSS", imagePath: "/images/logos/css-logo.png" },
   { name: "Python", imagePath: "/images/logos/python-logo.png" },
   { name: "MySQL", imagePath: "/images/logos/mysql-logo.png" },
-  { name: "Docker", imagePath: "/images/logos/docker-logo.png" },
   { name: "Git", imagePath: "/images/logos/git-logo.png" },
-  { name: "AWS", imagePath: "/images/logos/aws-logo.png" },
   {
     name: "Terraform",
     imagePath: "/images/logos/tf-logo.png",

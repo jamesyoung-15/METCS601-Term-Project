@@ -64,22 +64,38 @@ const Contact = () => {
     }
   };
 
-  // simulate form submission, going to always succeed if the form is valid
+  // Function to handle form submission
   const handleSubmit = async (e: React.FormEvent) => {
+    // Prevent default form submission behavior
     e.preventDefault();
-
+    
+    // Validate the form before submission
     if (!validateForm()) {
       return;
     }
-
+  
+    // If validation passes, proceed with form submission
     setIsSubmitting(true);
     setSubmitStatus("idle");
-
+  
+    // Send form to API Gateway, uploads to DynamoDB
     try {
-      await new Promise((resolve) => setTimeout(resolve, 300));
+      const response = await fetch(import.meta.env.VITE_API_ENDPOINT + '/upload', {
+        method: 'POST',
+        headers: {
+          'Content-Type': 'application/json',
+        },
+        body: JSON.stringify(formData),
+      });
+  
+      if (!response.ok) {
+        throw new Error(`HTTP error! status: ${response.status}`);
+      }
+  
+      const result = await response.json();
+      console.log("Form submitted successfully:", result);
 
-      console.log("Form submitted:", formData);
-
+      // Reset form data and set status
       setSubmitStatus("success");
       setFormData({
         name: "",
@@ -108,6 +124,7 @@ const Contact = () => {
       </div>
       <form onSubmit={handleSubmit} className="contact-form">
         <div className="form-row">
+          {/* Name */}
           <div className="form-group">
             <label htmlFor="name" className="form-label">
               Name *
@@ -125,7 +142,8 @@ const Contact = () => {
               <span className="error-message">{errors.name}</span>
             )}
           </div>
-
+          
+          {/* Email */}
           <div className="form-group">
             <label htmlFor="email" className="form-label">
               Email *
@@ -144,7 +162,8 @@ const Contact = () => {
             )}
           </div>
         </div>
-
+        
+        {/* Subject (optional) */}
         <div className="form-group">
           <label htmlFor="subject" className="form-label">
             Subject
@@ -159,7 +178,8 @@ const Contact = () => {
             placeholder="What's this about?"
           />
         </div>
-
+        
+        {/* Message */}
         <div className="form-group">
           <label htmlFor="message" className="form-label">
             Message *
@@ -177,7 +197,8 @@ const Contact = () => {
             <span className="error-message">{errors.message}</span>
           )}
         </div>
-
+        
+        {/* Submit Button */}
         <div className="form-actions">
           <button
             type="submit"
@@ -188,7 +209,8 @@ const Contact = () => {
           </button>
         </div>
       </form>
-
+      
+      {/* Submission Status Messages */}
       {submitStatus === "success" && (
         <div className="alert success-message">
           <p>Thank you for your message! I'll get back to you soon.</p>
