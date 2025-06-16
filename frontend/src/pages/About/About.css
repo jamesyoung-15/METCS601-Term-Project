@@ -1,0 +1,129 @@
+.about-page {
+  max-width: 800px;
+  margin: var(--spacing-xl) auto 0;
+}
+
+.about-page h1 {
+  text-align: center;
+  margin-bottom: var(--spacing-lg);
+}
+
+/* Header Section */
+.about-header {
+  display: grid;
+  grid-template-columns: 2fr 1fr;
+  gap: var(--spacing-xl);
+  align-items: center;
+  margin-bottom: var(--spacing-2xl);
+}
+
+.intro-text {
+  font-size: 1.1rem;
+  line-height: 1.6;
+  color: var(--text-secondary);
+}
+
+.about-image {
+  display: flex;
+  justify-content: center;
+}
+
+.about-image img {
+  width: 250px;
+  height: 250px;
+  border-radius: 50%;
+  object-fit: cover;
+}
+
+/* Background Section */
+.background-content p {
+  font-size: 1.05rem;
+  line-height: 1.7;
+  margin-bottom: var(--spacing-md);
+}
+
+/* Timeline Sections */
+
+.timeline-item {
+  position: relative;
+  margin-bottom: var(--spacing-xl);
+}
+
+.timeline-content h3 {
+  color: var(--text-primary);
+  margin-bottom: var(--spacing-xs);
+  font-size: 1.2rem;
+}
+
+.timeline-header {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+.timeline-meta {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: var(--spacing-sm);
+  font-size: 0.9rem;
+}
+
+.timeline-main {
+  color: var(--primary-color);
+  font-weight: 500;
+}
+
+.timeline-secondary {
+  color: var(--text-secondary);
+  font-size: 0.8rem;
+}
+
+.timeline-content p {
+  color: var(--text-secondary);
+}
+
+/* Responsive Design */
+@media (max-width: 768px) {
+  .about-header {
+    grid-template-columns: 1fr;
+    text-align: center;
+    gap: var(--spacing-lg);
+  }
+
+  .about-image img {
+    width: 150px;
+    height: 150px;
+  }
+
+  .timeline {
+    padding-left: var(--spacing-lg);
+  }
+
+  .timeline-header {
+    flex-direction: column;
+    align-items: flex-start;
+    gap: var(--spacing-xs);
+  }
+
+  .timeline-meta {
+    flex-direction: column;
+    align-items: flex-start;
+    gap: var(--spacing-xs);
+  }
+  .section h2 {
+    text-align: center;
+    margin-bottom: var(--spacing-lg);
+  }
+}
+
+@media (max-width: 480px) {
+  .about-image img {
+    width: 120px;
+    height: 120px;
+  }
+
+  .timeline {
+    padding-left: var(--spacing-md);
+  }
+}

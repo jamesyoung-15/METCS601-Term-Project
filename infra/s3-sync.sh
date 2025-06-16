@@ -1,0 +1,1 @@
+aws s3 sync ../frontend/dist/ s3://termproject.jyylab.com --delete --profile Dev
