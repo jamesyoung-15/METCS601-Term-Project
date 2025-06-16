@@ -17,9 +17,11 @@ Responsive portfolio website built with Vite + React + TypeScript, using feature
 - Topic is about me, features I will have:
   - bio
   - contact form
+  - send contact form to DB through API
   - resume
   - photo gallery of hws
   - skills section
+  - fetch my local time from API
 
 ## Tech Stack
 
@@ -36,8 +38,16 @@ Responsive portfolio website built with Vite + React + TypeScript, using feature
 
 ### Architecture
 
+- Visiting Site
+
 ```
 User -> Cloudflare CDN -> S3 -> Static Website
+```
+
+- Sending form
+
+```
+Form -> API Gateway -> Lambda -> DynamoDB
 ```
 
 ## Site Structure & Routing
@@ -154,7 +164,30 @@ Probs going w/ desktop-first.
 └── README.md
 ```
 
-
 ## Deployment Strategy
 
 - IaC w/ Terraform
+- Bash scripts
+
+## API + Backend
+
+For sending contacts form, will use API Gateway + Lambda + DynamoDB as backend, front-end will send a simple post request with JSON format.
+
+### DynamoDB Schema For Contact Forms
+
+| Field | Type | Description |
+
+|-------|------|-------------|
+
+| `id` | String | UUID primary key (Partition Key) |
+
+| `name` | String | Contact's name |
+
+| `email` | String | Contact's email address |
+
+| `subject` | String | Optional subject line |
+
+| `message` | String | Message content |
+
+| `timestamp` | Number | Unix timestamp when submitted |
+| `responded` | Boolean  |  Whether I have responded or not (automatically set to false) |
