@@ -30,3 +30,9 @@ variable "subdomain" {
   type        = string
   default     = "termproject"
 }
+
+variable "cors_allowed_origins" {
+  description = "Allowed origins for CORS"
+  type        = list(string)
+  default     = ["*"]
+}

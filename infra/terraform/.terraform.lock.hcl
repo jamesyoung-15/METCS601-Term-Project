@@ -23,10 +23,3 @@ provider "registry.terraform.io/hashicorp/aws" {
     "h1:yXCfy3ewnO/wTrjk1AJHe6m0ejDOO5hHDKnJLqlVeno=",
   ]
 }
-
-provider "registry.terraform.io/hashicorp/random" {
-  version = "3.6.3"
-  hashes = [
-    "h1:mVjgq8wLKzwJpDXmquBB4fxuBCUm8XU+TLANaw4FOfk=",
-  ]
-}
