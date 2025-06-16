@@ -1,0 +1,4 @@
+.time-button {
+  background-color: #f6c177 !important;
+  gap: var(--spacing-xs);
+}
