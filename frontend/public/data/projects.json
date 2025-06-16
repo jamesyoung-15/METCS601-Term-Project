@@ -1,0 +1,32 @@
+[
+  {
+    "id": 1,
+    "title": "Homework 5/6: Inventory Application",
+    "description": "Homework 5 and 6 - React+Typescript application to show inventory items w/ routing",
+    "imagePath": "/images/projects/hw6.png"
+  },
+  {
+    "id": 2,
+    "title": "Homework 2: Athletes Quiz",
+    "description": "Interactive drag-and-drop quiz application about athletes, fetches data from JSON on Node.js server",
+    "imagePath": "/images/projects/hw2.png"
+  },
+  {
+    "id": 3,
+    "title": "Homework 4: Country Data Manager",
+    "description": "Country data management using Typescript",
+    "imagePath": "/images/projects/hw4.png"
+  },
+  {
+    "id": 4,
+    "title": "Homework 3: Portfolio Site",
+    "description": "Personal portfolio website with responsive design using HTML and CSS",
+    "imagePath": "/images/projects/hw3.png"
+  },
+  {
+    "id": 5,
+    "title": "Homework 1: Form",
+    "description": "Simple form using HTML and CSS",
+    "imagePath": "/images/projects/hw1.png"
+  }
+]
