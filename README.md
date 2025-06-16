@@ -8,8 +8,15 @@ Term project for METCS601 where I built a responsive portfolio website built wit
 
 ### Frontend
 
-- Framework: Vite + React + TypeScript + React Router
+- Framework: Vite + React
 - Styling: CSS
+- Language: Typescript
+
+### API + Backend
+
+- API Gateway
+- Lambda (Python)
+- DynamoDB
 
 ### Infrastructure
 
@@ -30,6 +37,16 @@ User -> Cloudflare CDN -> S3 -> Static Website
 - `/contact` - Contact form
 - `/gallery` - Photo gallery of all homeworks
 - `/resume` - Displays embedded PDF of resume
+
+## Project Features
+
+- React w/ Typescript
+- Responsive design using CSS features like grid
+- Fetches local time from API
+- Posts contact form to backend through API
+- Responsive image gallery to showcase previous homeworks
+- Embedded PDF resume using HTML5 `iframe`
+- React routing w/ 5 pages
 
 ## My Dev Setup
 
@@ -59,4 +76,3 @@ cd frontend
 npm run build
 aws s3 sync ./dist s3://termproject.jyylab.com --delete
 ```
-
