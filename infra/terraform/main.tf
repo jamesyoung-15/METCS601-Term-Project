@@ -20,8 +20,8 @@ provider "aws" {
 
   default_tags {
     tags = {
-      Project     = "CS601"
-      ManagedBy   = "Terraform"
+      Project   = "CS601"
+      ManagedBy = "Terraform"
     }
   }
 }
