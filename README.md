@@ -26,8 +26,16 @@ Term project for METCS601 where I built a responsive portfolio website built wit
 
 ### Simple Architecture
 
+- Viewing frontend
+
 ```
 User -> Cloudflare CDN -> S3 -> Static Website
+```
+
+- Submitting form
+
+```
+Form -> API Gateway -> Lambda -> DynamoDB
 ```
 
 ## Pages/Routes
