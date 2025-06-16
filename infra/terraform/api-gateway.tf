@@ -1,6 +1,6 @@
 # API Gateway
 resource "aws_apigatewayv2_api" "api_gateway" {
-  name          = "face-blur-http-api"
+  name          = "cs601-api-gateway"
   protocol_type = "HTTP"
   cors_configuration {
     allow_methods = ["POST"]
@@ -60,7 +60,7 @@ resource "aws_cloudwatch_log_group" "cloudwatch_api_gw" {
 resource "aws_apigatewayv2_integration" "api_integration_upload" {
   api_id = aws_apigatewayv2_api.api_gateway.id
 
-  integration_uri    = aws_lambda_function.upload_image_lambda.invoke_arn
+  integration_uri    = aws_lambda_function.upload_contact.invoke_arn
   integration_type   = "AWS_PROXY"
   integration_method = "POST"
 }

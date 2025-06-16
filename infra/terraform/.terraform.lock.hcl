@@ -9,6 +9,13 @@ provider "registry.terraform.io/cloudflare/cloudflare" {
   ]
 }
 
+provider "registry.terraform.io/hashicorp/archive" {
+  version = "2.6.0"
+  hashes = [
+    "h1:r+rOv4ULZV+SbvSSEU9bPuEdsCaUU7SroAmZlPMRBYo=",
+  ]
+}
+
 provider "registry.terraform.io/hashicorp/aws" {
   version     = "5.72.0"
   constraints = "~> 5.0"

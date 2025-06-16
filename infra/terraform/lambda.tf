@@ -1,6 +1,6 @@
 data "archive_file" "archive_upload_lambda" {
   type        = "zip"
-  source_dir  = "../lambda"
+  source_dir  = "../../lambda"
   output_path = "${path.module}/lambda.zip"
 }
 
@@ -8,12 +8,13 @@ data "archive_file" "archive_upload_lambda" {
 resource "aws_lambda_function" "upload_contact" {
   filename      = "lambda.zip"
   function_name = "cs601_upload_contact"
-  role          = aws_iam_role.iam_for_lambda.arn
-  handler       = "upload.lambda_handler"
+  role          = aws_iam_role.lambda_role.arn
+  handler       = "upload_contact.lambda_handler"
 
   runtime     = "python3.12"
   timeout     = 30
   memory_size = 512
+  publish = true
 
   environment {
     variables = {

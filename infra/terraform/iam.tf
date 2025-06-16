@@ -64,7 +64,7 @@ resource "aws_iam_role_policy" "lambda_dynamodb" {
 
 # IAM Role for Lambda, give basic execution role
 resource "aws_iam_role_policy_attachment" "iam_lambda" {
-  role       = aws_iam_role.iam_for_lambda.name
+  role       = aws_iam_role.lambda_role.name
   policy_arn = "arn:aws:iam::aws:policy/service-role/AWSLambdaBasicExecutionRole"
 }
 
@@ -72,7 +72,7 @@ resource "aws_iam_role_policy_attachment" "iam_lambda" {
 resource "aws_lambda_permission" "api_gateway_upload_lambda_permission" {
   statement_id  = "AllowExecutionFromAPIGateway"
   action        = "lambda:InvokeFunction"
-  function_name = aws_lambda_function.upload_image_lambda.function_name
+  function_name = aws_lambda_function.upload_contact.function_name
   principal     = "apigateway.amazonaws.com"
 
   source_arn = "${aws_apigatewayv2_api.api_gateway.execution_arn}/*/*/*"
